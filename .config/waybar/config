@@ -1,0 +1,201 @@
+{
+	"layer": "top",
+	"position": "top",
+	"modules-left": ["custom/launcher", "cpu", "temperature", "memory", "network", "mpris"],
+	"modules-center": ["hyprland/workspaces", "tray"],
+	"modules-right": ["custom/updates","custom/terminal","backlight","pulseaudio","clock", "battery","custom/power"],
+
+	"pulseaudio": {
+		"tooltip": false,
+		"scroll-step": 5,
+		"format": "{icon} {volume}%",
+		"format-muted": "󰝟 {volume}%",
+		"on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"format-icons": {
+			"default": ["󰕿", "󰖀", "󰕾"]
+		}
+	},
+    "mpris": {
+        "format": "{player_icon} {dynamic}",
+        "format-paused": "{status_icon} <i>{dynamic}</i>",
+        "player-icons": {
+            "default": "",
+            "mpv": ""
+        },
+        "status-icons": {
+            "paused": ""
+        },
+        "dynamic-len": 60,
+        // "ignored-players": ["firefox"]
+    },
+    "hyprland/workspaces": {
+      "format": "{icon}",
+      "format-window-separator": " ",
+      "window-rewrite-default": " ",
+      "window-rewrite": {
+        "obs": " ",
+        "obsidian": "󰈙 ",
+        "qbittorrent": " ",
+        "alacritty": " ",
+        "atom": " ",
+        "(vs|)code(|-oss)": " ",
+        ".*n(eo|)vim.*": " ",
+        "neovide": " ",
+        "banshee": "󰊖 ",
+        "blender": " ",
+        "chromium": " ",
+        "google-chrome": " ",
+        "cura": " ",
+        "org.pwmt.zathura": "󰈙 ",
+        "darktable": " ",
+        "discord": "󰙯 ",
+        "eclipse": " ",
+        "emacs": " ",
+        "eog": " ",
+        "evince": " ",
+        "evolution": " ",
+        "feh": " ",
+        "file-roller": "󰙖 ",
+        "filezilla": " ",
+        "firefox": " ",
+        "firefox-esr": " ",
+        "firefoxdev": " ",
+        "navigator": " ",
+        "gimp": " ",
+        "gimp-2.8": " ",
+        "fr.handbrake.ghb": "󰍖 ",
+        "gnome-control-center": " ",
+        "gnome-terminal-server": " ",
+        "prusa-slicer": "󰆨 ",
+        "gpick": "󰈋 ",
+        "imv": "󰋩 ",
+        "insomnia": " ",
+        "java": " ",
+        "jetbrains-idea": " ",
+        "jetbrains-studio": " ",
+        "keepassxc": "󰌇 ",
+        "keybase": "󰌆 ",
+        "kicad": " ",
+        "kitty": " ",
+        "st-256color": " ",
+        "st": " ",
+        "libreoffice": "󰏆 ",
+        "lua5.1": " ",
+        "mpv": "󰎁 ",
+        "mupdf": " ",
+        "mysql-workbench-bin": " ",
+        "nautilus": " ",
+        "nemo": " ",
+        "openscad": "󰆦 ",
+        "pavucontrol": " ",
+        "postman": " ",
+        "rhythmbox": "󰓃 ",
+        "robo3t": " ",
+        "signal": " ",
+        "slack": " ",
+        "slic3r.pl": "󰆧 ",
+        "spotify": " ",
+        "steam": " ",
+        "steamwebhelper": " ",
+        "subl": " ",
+        "subl3": " ",
+        "sublime_text": " ",
+        "thunar": "󰈢 ",
+        "thunderbird": " ",
+        "totem": " ",
+        "urxvt": " ",
+        "xfce4-terminal": " ",
+        "xournal": " ",
+        "yelp": " ",
+        "zenity": " ",
+        "zoom": " ",
+        "telegram": " ",
+        "telegram-desktop": " ",
+        "kotatogram": " ",
+        "lunarclient": " ",
+        "viber": " ",
+    },
+    "persistent-workspaces": {
+             "*": 4, // 4 workspaces by default on every monitor
+     },
+     "format-icons": {
+		"1": "",
+		"2": "",
+		"3": "",
+		"4": "󰙯",
+		"default": ""
+	  }
+    },
+	"network": {
+		"tooltip": false,
+		"format-wifi": " {essid}",
+		"format-ethernet": "󰈀 ",
+        "on-click": "bash ~/.config/waybar/toggle_nm_connedit.sh"
+	},
+	"backlight": {
+		"tooltip": false,
+		"format": " {}%",
+		"interval":1,
+        "on-scroll-up": "brightnessctl set 5+%",
+		"on-scroll-down": "brightnessctl set 5-%"
+	},
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon}  {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+	"tray":{
+		"icon-size":18,
+		"spacing": 10,
+        "show-passive-items": true
+	},
+    "clock": {
+        "format": "{: %I:%M %p %d/%m/%Y}"
+    },
+    "cpu": {
+        "interval": 15,
+        "format": " {}%",
+        "max-length": 10
+    },
+    "temperature" : {
+        "format": "{temperatureC}°C ",
+        "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input"
+    },
+    "memory": {
+        "interval": 30,
+        "format": " {}%",
+        "max-length": 10
+    },
+    "custom/launcher":{
+        "format": "",
+        "on-click": "tofi-drun --drun-launch=true",
+        "on-click-middle": "killall tofi"
+    },
+    "custom/power":{
+        "format": "",
+        "on-click": "bash ~/.config/hypr/exit.sh",
+        "on-click-right": "bash ~/.config/hypr/closeall.sh",
+        "on-click-middle": "bash ~/.config/hypr/shutdown.sh",
+    },
+    "custom/updates":{
+        "format": "{} Update(s)",
+        "exec": "checkupdates | wc -l",
+        "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]",
+        "interval": 60,
+        "on-click": "kitty --class popup-top-right -e paru -Syu && notify-send 'The system has been updated' "
+    },
+    "custom/terminal":{
+        "tooltip": false,
+        "format":"",
+        "on-click": "bash ~/.config/hypr/toggle_terminal.sh",
+        "on-click-right": "kitty --class=popup-top-right",
+        "on-click-middle": "bash ~/.config/hypr/close_terminal.sh",
+    }
+}

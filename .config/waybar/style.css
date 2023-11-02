@@ -1,0 +1,307 @@
+@import url("../../.cache/wal/colors-gtk.css");
+* {
+  border-radius: 10px;
+  font-family: "JetbrainsMono Nerd Font";
+  font-size: 15px;
+  min-height: 10px;
+}
+
+window#waybar {
+  background: transparent;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+#window {
+  margin-top: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+  transition: none;
+  color: transparent;
+  background: transparent;
+}
+#tags {
+  margin-top: 6px;
+  margin-left: 12px;
+  font-size: 4px;
+  margin-bottom: 0px;
+  border-radius: 10px;
+  background: @background;
+  transition: none;
+}
+
+#tags button {
+  transition: none;
+  color: #b5e8e0;
+  background: transparent;
+  font-size: 16px;
+  border-radius: 2px;
+}
+
+#tags button.occupied {
+  transition: none;
+  color: #f28fad;
+  background: transparent;
+  font-size: 4px;
+}
+
+#tags button.focused {
+  color: #abe9b3;
+  border-top: 2px solid #abe9b3;
+  border-bottom: 2px solid #abe9b3;
+}
+
+#tags button:hover {
+  transition: none;
+  box-shadow: inherit;
+  text-shadow: inherit;
+  color: #fae3b0;
+  border-color: #e8a2af;
+  color: #e8a2af;
+}
+
+#tags button.focused:hover {
+  color: #e8a2af;
+}
+
+#network {
+  margin-top: 6px;
+  margin-left: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 0px;
+  border-radius: 10px;
+  transition: none;
+  background: @background;
+  color: @color11;
+  border: 2px solid @color8;
+}
+#mpris {
+  margin-top: 6px;
+  margin-left: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 0px;
+  border-radius: 10px;
+  transition: none;
+  background: @background;
+  color: @color2;
+  border: 2px solid @color8;
+}
+
+#pulseaudio {
+  margin-top: 6px;
+  margin-left: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 0px;
+  border-radius: 10px;
+  transition: none;
+  background: @background;
+  color: @color6;
+  border: 2px solid @color8;
+}
+
+#battery {
+  margin-top: 6px;
+  margin-left: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 0px;
+  border-radius: 10px;
+  transition: none;
+  background: @background;
+  color: @color4;
+  border: 2px solid @color8;
+}
+
+#battery.charging,
+#battery.plugged {
+  background-color: @background;
+  color: @color4;
+}
+
+#battery.critical:not(.charging) {
+  color: @color4;
+  background-color: @background;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes blink {
+  to {
+    background-color: @color8;
+    color: @color4;
+  }
+}
+
+#backlight {
+  margin-top: 6px;
+  margin-left: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 0px;
+  border-radius: 10px;
+  transition: none;
+  background: @background;
+  color: @color11;
+  border: 2px solid @color8;
+}
+#clock {
+  margin-top: 6px;
+  margin-left: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 0px;
+  border-radius: 10px;
+  transition: none;
+  background: @background;
+  color: @color5;
+  border: 2px solid @color8;
+}
+
+#memory {
+  margin-top: 6px;
+  margin-left: 8px;
+  padding-left: 10px;
+  margin-bottom: 0px;
+  padding-right: 10px;
+  border-radius: 10px;
+  transition: none;
+  background: @background;
+  color: @color6;
+  border: 2px solid @color8;
+}
+#cpu {
+  margin-top: 6px;
+  margin-left: 8px;
+  padding-left: 10px;
+  margin-bottom: 0px;
+  padding-right: 10px;
+  border-radius: 10px;
+  transition: none;
+  background: @background;
+  border: 2px solid @color8;
+  color: @color4;
+}
+#temperature {
+  margin-top: 6px;
+  margin-left: 8px;
+  padding-left: 10px;
+  margin-bottom: 0px;
+  padding-right: 10px;
+  border-radius: 10px;
+  transition: none;
+  background: @background;
+  border: 2px solid @color8;
+  color: @color5;
+}
+
+#tray {
+  margin-top: 6px;
+  margin-left: 8px;
+  padding-left: 10px;
+  margin-bottom: 0px;
+  padding-right: 10px;
+  border: 2px solid @color8;
+  transition: none;
+  color: #b5e8e0;
+  background: @background;
+}
+
+#workspaces {
+  margin-top: 6px;
+  margin-left: 8px;
+  padding-left: 0px;
+  margin-bottom: 0px;
+  padding-right: 0px;
+  border-radius: 10px;
+  background: @background;
+  color: @foreground;
+  border: 2px solid @color8;
+}
+
+#workspaces button {
+  color: @foreground;
+}
+
+#workspaces button:hover {
+  background: @color8;
+}
+
+#workspaces button.active {
+  color: @color1;
+}
+
+#custom-launcher {
+  font-size: 24px;
+  margin-top: 6px;
+  margin-left: 8px;
+  padding-left: 6px;
+  padding-right: 14px;
+  /* border-radius: 10px; */
+  border: 2px solid @color12;
+  transition: none;
+  color: @color12;
+  background: @background;
+}
+
+#custom-power {
+  font-size: 20px;
+  margin-top: 6px;
+  margin-left: 8px;
+  margin-right: 8px;
+  padding-left: 8px;
+  padding-right: 14px;
+  margin-bottom: 0px;
+  border-radius: 10px;
+  transition: none;
+  color: @color1;
+  background: @background;
+  border: 2px solid @color1;
+}
+
+#custom-terminal {
+  margin-top: 6px;
+  margin-left: 8px;
+  padding-left: 10px;
+  padding-right: 15px;
+  margin-bottom: 0px;
+  border-radius: 10px;
+  transition: none;
+  background: @background;
+  color: @color2;
+  border: 2px solid @color8;
+  /* TODO: Wallpaper switching */
+}
+
+#custom-updates {
+  margin-top: 6px;
+  margin-left: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 0px;
+  border-radius: 10px;
+  transition: none;
+  background: @background;
+  color: @color7;
+  border: 2px solid @color8;
+}
+
+/* #custom-media { */
+/*   margin-top: 6px; */
+/*   margin-left: 8px; */
+/*   padding-left: 10px; */
+/*   padding-right: 10px; */
+/*   margin-bottom: 0px; */
+/*   border-radius: 10px; */
+/*   transition: none; */
+/*   color: @background; */
+/*   background: #f2cdcd; */
+/* } */

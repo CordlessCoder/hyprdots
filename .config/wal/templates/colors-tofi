@@ -1,0 +1,70 @@
+# Default text color
+#
+# All text defaults to this color if not otherwise specified.
+text-color = {foreground}
+
+# All pieces of text have the same theming attributes available:
+#
+# *-color
+#     Foreground color
+#
+# *-background
+#     Background color
+#
+# *-background-padding
+#     Background padding in pixels (comma-delimited, CSS-style list).
+#     See "DIRECTIONAL VALUES" under `man 5 tofi` for more info.
+#
+# *-background-corner-radius
+#     Radius of background box corners in pixels
+
+# Prompt text theme
+# prompt-color = #FFFFFF
+prompt-background = {background.strip}
+
+# Placeholder text theme
+placeholder-color = #FFFFFFA8
+placeholder-background = #00000000
+
+# Input text theme
+# input-color = #FFFFFF
+input-background = {background.strip}
+
+# Default result text theme
+default-result-color = {color4.strip}
+default-result-background = #00000000
+
+# Alternate (even-numbered) result text theme
+#
+# If unspecified, these all default to the corresponding
+# default-result-* attribute.
+#
+alternate-result-color = {color12.strip}
+# alternate-result-background = #00000000
+
+# Selection text
+selection-color = {color1.strip}
+# selection-background = #00000000
+
+# Matching portion of selection text
+selection-match-color = {color5.strip}
+
+
+# Color of the text cursor
+#
+# If unspecified, defaults to the same as input-color
+# text-cursor-color = #FFFFFF
+
+# Color of text behind the text cursor when text-cursor-style = block
+#
+# If unspecified, defaults to the same as background-color
+# text-cursor-background = #000000
+
+# Window background color
+background-color = {background.strip}{alpha-hex}
+
+# Border outline color
+outline-color = {color15.strip}
+
+# Border color
+border-color = {color7}
